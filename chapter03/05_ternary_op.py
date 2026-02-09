@@ -23,7 +23,7 @@ def main():
     else:
         print("negative")
 
-    result = "positive" if a > 0 else "negative"  
+    result = "positive" if a > 0 else "negative"  # This is the ternary operator
     print(result)
     # print("positive" if a > 0 else "negative"  )  
 
