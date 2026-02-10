@@ -1,4 +1,4 @@
-def calsulate_sum_and_product(upper_bound: int):
+def calsulate_sum_and_product(upper_bound: int) -> tuple:
     total_sum = 0
     total_product = 1
 
