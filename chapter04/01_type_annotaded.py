@@ -19,13 +19,14 @@ def my_add(a: float | int, b: float | int) -> float | int:
     return a + b
 
 def main():
-    print(my_add(10, 20.5))
+    
     
     try:
+        print(my_add(10, 20.5))
         print(my_add(10, "hello"))
     except TypeError as e:
         print(e)
-        return
+        
     
     print("Annotations:", my_add.__annotations__)
     print("Docs:", my_add.__doc__)
