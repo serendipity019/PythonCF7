@@ -35,12 +35,12 @@ def last(seq: Sequence[T]) -> T:
         raise ValueError("Sequence is empty.")
     return seq[-1]
 
-def count_truthy(elements: list[any]) -> int:
+def count_truthy(elements: List[Any]) -> int:
     """
     Counts how many elements in the list are truthy.
 
     Args:
-        elements (list[any]): A list of elements.
+        elements (List[Any]): A list of elements.
 
     Returns:
         int: The count of truthy elements in the list.    
