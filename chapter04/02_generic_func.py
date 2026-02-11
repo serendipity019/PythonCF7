@@ -56,5 +56,30 @@ def count_truthy(elements: list[any]) -> int:
         #         count += 1
 
         # return count
-        return sum(1 for elem in elements if elem) # Above mine. this line teacher proccess.        
+        return sum(1 for elem in elements if elem) # Above mine way. this line teacher's way.  
+
+def len_str(s: Optional[str] = None) -> int:
+       return len(s) if s is not None else 0   
+
+def main():
+    numbers = [10, 20, 30, 40, 50]
+    print(f"First number: {first(numbers)}")
+    print(f"Last number: {last(numbers)}")
+
+    try:
+        print("First element of []:", first([]))
+    except ValueError as e:
+        print(e)
+
+    mixed_values = [0, True, False, 'Hello', '', None, 17]
+    print("Truthy values are:", count_truthy(mixed_values))
+
+    print("Length of 'Hello World':", len_str("Hello World"))
+    print("Length of None:", len_str(None))
+
+    print(first("Hello CF!"))
+
+if __name__ == "__main__":
+    main()
+
 
