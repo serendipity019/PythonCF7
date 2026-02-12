@@ -3,6 +3,17 @@ from typing import List, Tuple, Dict, Optional
 
 
 def get_results(products, **kwargs):
+   """ 
+   Filter a list of products based on give keyword arguments.
+   Each keyword arguments corresponds to a product attribute.
+
+   Params:
+       products (List[Tuple[str, int]]): A list of tuples where each tuple contains a brand and a price.
+       **kwargs (Dict[str, str | int]): Arbitary keyword arguments for filtering.
+
+    Returns:
+        results (List[Tuple[str, int]]): Filtered list of our products.
+   """
    results = [
       (brand, price) for brand, price in products if kwargs.get('brand') == brand and kwargs.get('price') == price
    ]
