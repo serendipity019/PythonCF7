@@ -10,6 +10,7 @@ def fibo_with_logging(n):
       print(f"Cache hit for Fibo({n})")
    else:
       print(f"Calculating Fibo({n})")
+   return fibo(n)
 
 def main():
    fibo.cache_clear()
