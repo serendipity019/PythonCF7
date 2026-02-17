@@ -24,6 +24,7 @@ def count_with_get_method(my_list):
 def counter_with_counter(my_list):
     frequency_dict = Counter(my_list)   
     sorted_freq_dict = frequency_dict.most_common()
+    #sorted_freq_dict = dict(frequency_dict.most_common()) # If we want to have dictionary like the others
     print(sorted_freq_dict) 
 
 def main():
