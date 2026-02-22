@@ -19,47 +19,30 @@ def create_connection(host_name, user_name, user_password, db_name, port):
 
     return connection
 
-
-def create_table(connection):
-    create_students_table = """
-    CREATE TABLE IF NOT EXISTS students (
-        id INTEGER PRIMARY KEY,
-        firstname VARCHAR(50),
-        lastname VARCHAR(50)
-    )
-    """
-
-    create_teachers_table = """
-    CREATE TABLE IF NOT EXISTS teachers (
-        id INTEGER PRIMARY KEY,
-        firstname VARCHAR(50),
-        lastname VARCHAR(50),
-        age INTEGER
-    )
-    """
+def insert_teacher(connection, teacher):
     cursor = connection.cursor()
 
     try:
-        cursor.execute('BEGIN')
-        cursor.execute(create_teachers_table)
-        cursor.execute(create_students_table)
+        cursor.execute(
+            "INSERT INTO teachers (id, firstname, lastname, age) VALUES (%s, %s, %s, %s)",
+            teacher
+        )
         connection.commit()
-        print("Table created")
+        print("Teacher inserted!")
     except Error as e:
         print(f"Error {e} occured")
         connection.rollback()
     finally:
         cursor.close()
-    
+
 def main():
     connect = create_connection('localhost', 'root', 'my_pass', 'coding2025', '3306')
 
     if connect:
-        create_table(connect)
+        teacher = (1, "Bob", "M.", 45)
+        insert_teacher(connect, teacher)
         connect.close()
         print("MySQL connection is closed.")
 
 if __name__ == "__main__":
-    main()  
-
-
+    main()          
