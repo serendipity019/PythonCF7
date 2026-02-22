@@ -55,7 +55,7 @@ def main():
     """
     Main function to connect to the database and update a teacher.
     """
-    conn = create_connection('localhost', 'root', 'panos6978706049', 'coding2025', '3306')
+    conn = create_connection('localhost', 'root', 'my_pass', 'coding2025', '3306')
     if conn:
         teacher = ("Alice", "Smith", 45, 1)  # New values for firstname, lastname, and age, with id to identify the teacher
         update_teacher(conn, teacher)
