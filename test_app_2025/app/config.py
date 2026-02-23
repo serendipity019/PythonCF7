@@ -1,0 +1,1 @@
+PATH = "/home/kleidimos/coding-factory/Python_projects/PythonCF7/test_app_2025"
